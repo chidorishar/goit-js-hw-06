@@ -14,13 +14,14 @@ const images = [
 ];
 
 const galleryParentEl = document.querySelector('.gallery');
-const createGalleryCardMarkup = function (acc, { url, alt }) {
+const galleryMarkupHtml = images.reduce(createGalleryCardMarkup, '');
+
+function createGalleryCardMarkup(acc, { url, alt }) {
   acc += `<li class = 'gallery__card'>
     <img class = 'gallery__image' src = \"${url}\" alt = \"${alt}\"/>
   </li>`;
 
   return acc;
-};
-const galleryMarkupHtml = images.reduce(createGalleryCardMarkup, '');
+}
 
 galleryParentEl.insertAdjacentHTML('beforeend', galleryMarkupHtml);

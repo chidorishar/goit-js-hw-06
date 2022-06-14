@@ -7,10 +7,10 @@ const domEls = {
 let counterValue = 0;
 const COUNTER_STEP = 1;
 
-const onCntrlBtnClick = function (event) {
+function onCntrlBtnClick(event) {
   counterValue += event.currentTarget === domEls.incrBtn ? COUNTER_STEP : -COUNTER_STEP;
   domEls.spanWithValue.textContent = counterValue;
-};
+}
 
 domEls.incrBtn.addEventListener('click', onCntrlBtnClick);
 domEls.decrBtn.addEventListener('click', onCntrlBtnClick);

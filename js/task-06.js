@@ -1,6 +1,6 @@
 const inputEl = document.querySelector('#validation-input');
 
-const onInputFocusLost = function () {
+function onInputFocusLost() {
   const properSymbCount = Number(inputEl.dataset.length);
   const currSymbCount = inputEl.value.length;
 
@@ -9,6 +9,6 @@ const onInputFocusLost = function () {
     return;
   }
   inputEl.classList.add(currSymbCount != properSymbCount ? 'invalid' : 'valid');
-};
+}
 
 inputEl.addEventListener('blur', onInputFocusLost);

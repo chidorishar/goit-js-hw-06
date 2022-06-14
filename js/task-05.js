@@ -4,10 +4,10 @@ const domEls = {
 };
 const DEFAULT_NAME = 'Anonymous';
 
-const onInputChange = function () {
+function onInputChange() {
   const enteredName = domEls.nameInput.value;
 
   domEls.outputSpan.textContent = enteredName === '' ? DEFAULT_NAME : enteredName;
-};
+}
 
 domEls.nameInput.addEventListener('input', onInputChange);
